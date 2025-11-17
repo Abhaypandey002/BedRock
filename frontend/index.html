@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Reel Text-to-Video Demo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Nova Reel Text-to-Video Demo</h1>
+        <p>Generate short preview videos locally using Amazon Bedrock's Nova Reel model.</p>
+      </header>
+
+      <section class="prompt-section">
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" rows="6" maxlength="2400" placeholder="Describe the scene you want to see..."></textarea>
+        <div class="prompt-meta">
+          <span id="char-count">0 / 2400</span>
+          <small>Max ~500 tokens. Longer prompts will be rejected.</small>
+        </div>
+        <button id="generate-btn">Generate Video</button>
+      </section>
+
+      <section class="status-section">
+        <p id="status-text">Enter a prompt to begin.</p>
+      </section>
+
+      <section class="video-section hidden" id="video-section">
+        <video id="result-video" controls></video>
+        <a id="download-link" class="download-link" href="#" download>Download video</a>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
